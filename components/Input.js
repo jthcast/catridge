@@ -7,7 +7,7 @@ export default class Input{
     icon,
     isDebounce = false,
     isDisabled = false,
-    label,
+    label = ``,
     onClick,
     onKeyPress,
     onEnter,
@@ -23,6 +23,9 @@ export default class Input{
     this.$span.innerText = label;
     this.$input = document.createElement(`input`);
     this.$input.classList.add(`input`);
+    if(label){
+      this.$input.classList.add(`input-label-text`);
+    }
     this.autoFocus = autoFocus;
     this.className = className;
     this.icon = icon;
