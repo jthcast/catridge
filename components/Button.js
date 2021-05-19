@@ -8,7 +8,7 @@ export default class Button{
     design,
     formAction,
     formTarget,
-    isDisable = false,
+    isDisabled = false,
     isLoading = false,
     onClick,
     tabIndex,
@@ -24,7 +24,7 @@ export default class Button{
     this.design = design;
     this.formAction = formAction;
     this.formTarget = formTarget;
-    this.isDisable = isDisable;
+    this.isDisabled = isDisabled;
     this.isLoading = isLoading;
     if(onClick){
       this.$button.addEventListener(`click`, onClick);
@@ -62,16 +62,16 @@ export default class Button{
     if(this.formTarget){
       this.$button.formTarget = this.formTarget;
     }
-    if(this.isDisable){
+    if(this.isDisabled){
       this.$button.disabled = true;
-    }else if(!this.isDisable){
+    }else if(!this.isDisabled){
       this.$button.disabled = false;
     }
     if(this.isLoading){
       this.$button.disabled = true;
       new Icon({ target: this.$button, icon: `spinner`, isSpin: true, className: `button-icon` });
     }
-    if(!this.isDisable && !this.isLoading){
+    if(!this.isDisabled && !this.isLoading){
       this.$button.disabled = false;
     }
     if(this.tabIndex){
