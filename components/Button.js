@@ -26,7 +26,9 @@ export default class Button{
     this.formTarget = formTarget;
     this.isDisable = isDisable;
     this.isLoading = isLoading;
-    this.onClick = onClick;
+    if(onClick){
+      this.button.addEventListener(`click`, onClick);
+    }
     this.tabIndex = tabIndex;
     this.target = target;
     this.title = title;
@@ -72,9 +74,6 @@ export default class Button{
     }
     if(!this.isDisable && !this.isLoading){
       this.button.disabled = false;
-    }
-    if(this.onClick){
-      this.button.addEventListener(`click`, this.onClick);
     }
     if(this.tabIndex){
       this.button.tabIndex = this.tabIndex;

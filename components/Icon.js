@@ -43,7 +43,9 @@ export default class Icon{
     this.isFocusable = isFocusable;
     this.icon = icon;
     this.isSpin = isSpin;
-    this.onClick = onClick;
+    if(onClick){
+      this.svg.addEventListener(`click`, onClick);
+    }
     this.rotate = rotate;
 
     target.appendChild(this.svg);
@@ -77,9 +79,6 @@ export default class Icon{
     }
     if(this.isSpin){
       this.svg.classList.add(`icon-spin`);
-    }
-    if(this.onClick){
-      this.svg.addEventListener(`click`, this.onClick);
     }
   }
 }
