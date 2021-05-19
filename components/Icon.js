@@ -33,34 +33,34 @@ export default class Icon{
     rotate,
     target
   }){
-    this.svg = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
-    this.svg.classList.add(`icon`);
-    this.svg.setAttribute(`width`, `1em`);
-    this.svg.setAttribute(`height`, `1em`);
-    this.svg.setAttribute(`fill`, `currentColor`);
-    this.svg.setAttribute(`focusable`, isFocusable);
+    this.$svg = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
+    this.$svg.classList.add(`icon`);
+    this.$svg.setAttribute(`width`, `1em`);
+    this.$svg.setAttribute(`height`, `1em`);
+    this.$svg.setAttribute(`fill`, `currentColor`);
+    this.$svg.setAttribute(`focusable`, isFocusable);
     this.className = className;
     this.isFocusable = isFocusable;
     this.icon = icon;
     this.isSpin = isSpin;
     if(onClick){
-      this.svg.addEventListener(`click`, onClick);
+      this.$svg.addEventListener(`click`, onClick);
     }
     this.rotate = rotate;
 
-    target.appendChild(this.svg);
+    target.appendChild(this.$svg);
     this.render();
   }
   
   render(){
     if(this.className){
-      this.svg.classList.add(this.className);
+      this.$svg.classList.add(this.className);
     }
     if(this.icon){
       const iconData = icons[this.icon];
       const { viewBox, paths } = iconData;
 
-      this.svg.setAttribute(`viewBox`, viewBox);
+      this.$svg.setAttribute(`viewBox`, viewBox);
       paths.forEach((pathData) => {
         const path = document.createElementNS(`http://www.w3.org/2000/svg`, `path`);
         const { fill, d } = pathData;
@@ -74,11 +74,11 @@ export default class Icon{
         if(this.rotate){
           path.setAttribute(`transform`, `rotate(${this.rotate} ${getRotateDegree(viewBox)})`)
         }
-        this.svg.appendChild(path);
+        this.$svg.appendChild(path);
       });
     }
     if(this.isSpin){
-      this.svg.classList.add(`icon-spin`);
+      this.$svg.classList.add(`icon-spin`);
     }
   }
 }
