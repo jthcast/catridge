@@ -79,6 +79,8 @@ export default class Icon{
     }
     if(this.isSpin){
       this.$svg.classList.add(`icon-spin`);
+    }else{
+      this.$svg.classList.remove(`icon-spin`);
     }
   }
 }
