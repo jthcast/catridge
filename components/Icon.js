@@ -62,19 +62,19 @@ export default class Icon{
 
       this.$svg.setAttribute(`viewBox`, viewBox);
       paths.forEach((pathData) => {
-        const path = document.createElementNS(`http://www.w3.org/2000/svg`, `path`);
+        const $path = document.createElementNS(`http://www.w3.org/2000/svg`, `path`);
         const { fill, d } = pathData;
 
         if(fill){
-          path.setAttribute(`fill`, fill);
+          $path.setAttribute(`fill`, fill);
         }
         if(d){
-          path.setAttribute(`d`, d);
+          $path.setAttribute(`d`, d);
         }
         if(this.rotate){
-          path.setAttribute(`transform`, `rotate(${this.rotate} ${getRotateDegree(viewBox)})`)
+          $path.setAttribute(`transform`, `rotate(${this.rotate} ${getRotateDegree(viewBox)})`)
         }
-        this.$svg.appendChild(path);
+        this.$svg.appendChild($path);
       });
     }
     if(this.isSpin){

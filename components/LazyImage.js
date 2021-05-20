@@ -10,8 +10,8 @@ export default class LazyImage{
     target,
     width
   }){
-    this.img = document.createElement(`img`);
-    this.img.classList.add(`lazyimage`);
+    this.$img = document.createElement(`img`);
+    this.$img.classList.add(`lazyimage`);
     this.alt = alt;
     this.className = className;
     this.emptyImageSrc = emptyImageSrc;
@@ -20,7 +20,7 @@ export default class LazyImage{
         const target = event.target;
           target.src = this.emptyImageSrc;
       };
-      this.img.addEventListener(`error`, errorHandling);
+      this.$img.addEventListener(`error`, errorHandling);
     }
     this.height = height;
     this.src = src;
@@ -37,31 +37,31 @@ export default class LazyImage{
         observer.unobserve(element);
       }
     };
-    intersectionObserver(this.img, callback, {
+    intersectionObserver(this.$img, callback, {
       root: null, rootMargin: `50%`, threshold: 0
     });
     
-    target.appendChild(this.img);
+    target.appendChild(this.$img);
     this.render();
   }
 
   render(){
     if(this.alt){
-      this.img.alt = alt;
+      this.$img.alt = alt;
     }
     if(this.className){
-      this.img.classList.add(this.className);
+      this.$img.classList.add(this.className);
     }
     if(this.height){
-      this.img.height = this.height;
+      this.$img.height = this.height;
     }
     if(this.src){
-      this.img.setAttribute(`data-src`, this.src);
+      this.$img.setAttribute(`data-src`, this.src);
     }else{
-      this.img.src = this.emptyImageSrc;
+      this.$img.src = this.emptyImageSrc;
     }
     if(this.width){
-      this.img.width = this.width;
+      this.$img.width = this.width;
     }
   }
 }

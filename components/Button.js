@@ -81,9 +81,9 @@ export default class Button{
     }
     if(this.title){
       this.$button.title = this.title;
-      const text = document.createElement(`span`);
-      text.innerText = this.title;
-      this.$button.appendChild(text);
+      const $span = document.createElement(`span`);
+      $span.innerText = this.title;
+      this.$button.appendChild($span);
     }
     if(this.type){
       this.$button.type = this.type;
