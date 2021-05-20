@@ -51,6 +51,10 @@ export default class Icon{
     target.appendChild(this.$svg);
     this.render();
   }
+
+  get dom(){
+    return this.$svg;
+  }
   
   render(){
     if(this.className){
