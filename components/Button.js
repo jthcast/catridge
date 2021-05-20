@@ -5,7 +5,7 @@ export default class Button{
     ariaLabel,
     children,
     className,
-    design,
+    design = `normal`,
     formAction,
     formTarget,
     isDisabled = false,
@@ -50,6 +50,8 @@ export default class Button{
       this.$button.classList.add(this.className);
     }
     if(this.design){
+      this.$button.classList.remove(`button-primary`);
+      this.$button.classList.remove(`button-danger`);
       if(this.design === `primary`){
         this.$button.classList.add(`button-primary`);
       }else if(this.design === `danger`){
