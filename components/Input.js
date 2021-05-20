@@ -47,7 +47,7 @@ export default class Input{
     }
     if(onEnter){
       const onEnterHandling = (event) => {
-        if(event.key === 'Enter'){
+        if(event.key === `Enter`){
           onEnter();
         }
       };
