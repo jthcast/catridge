@@ -136,3 +136,23 @@
   width: 100%;
   object-fit: cover;
 }
+
+.switch{
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  background-color: var(--color-down);
+  color: var(--border-base);
+}
+
+.switch-checked{
+  background-color: var(--primary-brand-base);
+  color: var(--white);
+}
+
+.switch:disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
