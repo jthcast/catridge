@@ -45,6 +45,10 @@ export default class LazyImage{
     this.render();
   }
 
+  get dom(){
+    return this.$img;
+  }
+
   render(){
     if(this.alt){
       this.$img.alt = alt;
