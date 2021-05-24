@@ -240,3 +240,39 @@
   height: 0.25rem;
   border-radius: 0 0 0 0.25rem;
 }
+
+.card{
+  width: fit-content;
+  display: grid;
+  border: 0.1rem solid var(--border-base);
+  border-radius: 0.25rem;
+  margin: 1rem;
+}
+
+.card-image{
+  width: calc( 100% + 0.1rem );
+  margin: -0.1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.card-body{
+  padding: 1rem;
+  display: grid;
+}
+
+.card-title{
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-description{
+  color: var(--color-down);
+}
+
+
+/* custom */
+
+.catcard{
+  width: 10rem;
+  cursor: pointer;
+}
