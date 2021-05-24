@@ -246,7 +246,6 @@
   display: grid;
   border: 0.1rem solid var(--border-base);
   border-radius: 0.25rem;
-  margin: 1rem;
 }
 
 .card-image{
