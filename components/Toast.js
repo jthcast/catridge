@@ -25,16 +25,18 @@ export default class Toast{
     this.className = className;
     this.duration = duration;
     this.headerChildren = headerChildren;
+    this.isClickToDestroy = isClickToDestroy;
+    this.onClick = onClick;
     this.showDurationBar = showDurationBar;
     this.timer = undefined;
 
     const onClickHandling = () => {
-      if(isClickToDestroy){
+      if(this.isClickToDestroy){
         clearInterval(this.timer);
         this.destroy();
       }
-      if(onClick){
-        onClick();
+      if(this.onClick){
+        this.onClick();
       }
     };
     this.$toast.addEventListener(`click`, onClickHandling);

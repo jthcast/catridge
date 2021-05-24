@@ -23,10 +23,10 @@ export default class Modal{
 
     const openHandling = () => {
       if (this.openHandler) {
-        openHandler();
+        this.openHandler();
       }
       if (this.isOpen === false && this.onClose) {
-        onClose();
+        this.onClose();
       }
     };
 

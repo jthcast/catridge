@@ -26,8 +26,9 @@ export default class Button{
     this.formTarget = formTarget;
     this.isDisabled = isDisabled;
     this.isLoading = isLoading;
-    if(onClick){
-      this.$button.addEventListener(`click`, onClick);
+    this.onClick = onClick;
+    if(this.onClick){
+      this.$button.addEventListener(`click`, this.onClick);
     }
     this.tabIndex = tabIndex;
     this.title = title;

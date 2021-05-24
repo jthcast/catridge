@@ -26,11 +26,13 @@ export default class Switch{
     this.isDisabled = isDisabled;
     this.className = className;
     this.isLoading = isLoading;
-    if(onChange){
-      this.$switch.addEventListener(`change`, onChange);
+    this.onChange = onChange;
+    this.onClick = onClick;
+    if(this.onChange){
+      this.$switch.addEventListener(`change`, this.onChange);
     }
-    if(onClick){
-      this.$switch.addEventListener(`click`, onClick);
+    if(this.onClick){
+      this.$switch.addEventListener(`click`, this.onClick);
     }
     this.tabIndex = tabIndex;
     this.unCheckedChildren = unCheckedChildren;

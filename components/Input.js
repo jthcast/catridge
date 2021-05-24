@@ -23,35 +23,38 @@ export default class Input{
     this.$span.innerText = label;
     this.$input = document.createElement(`input`);
     this.$input.classList.add(`input`);
-    if(label){
-      this.$input.classList.add(`input-label-text`);
-    }
     this.autoFocus = autoFocus;
     this.className = className;
     this.icon = icon;
     this.isDebounce = isDebounce;
     this.isDisabled = isDisabled;
     this.label = label;
-    if(onClick){
-      this.$input.addEventListener(`click`, onClick);
+    if(this.label){
+      this.$input.classList.add(`input-label-text`);
     }
-    if(onKeyPress){
-      const onKeyPressHandler = () => {
-        if(isDebounce){
-          debounce(onKeyPress, 500);
-          return;
-        }
-        onKeyPress();
-      };
-      this.$input.addEventListener(`keypress`, onKeyPressHandler);
+    this.onClick = onClick;
+    this.onEnter = onEnter;
+    this.onKeyPress = onKeyPress;
+    if(this.onClick){
+      this.$input.addEventListener(`click`, this.onClick);
     }
-    if(onEnter){
+    if(this.onEnter){
       const onEnterHandling = (event) => {
         if(event.key === `Enter`){
           onEnter();
         }
       };
       this.$input.addEventListener(`keypress`, onEnterHandling);
+    }
+    if(this.onKeyPress){
+      const onKeyPressHandler = () => {
+        if(this.isDebounce){
+          debounce(this.onKeyPress, 500);
+          return;
+        }
+        onKeyPress();
+      };
+      this.$input.addEventListener(`keypress`, onKeyPressHandler);
     }
     this.placeholder = placeholder;
     this.target = target;
