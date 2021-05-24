@@ -91,4 +91,8 @@ export default class Input{
       this.$input.value = this.value;
     }
   }
+
+  clear(){
+    this.$input.value = ``;
+  }
 }
