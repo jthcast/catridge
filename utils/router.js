@@ -1,6 +1,13 @@
 let target = undefined;
 
-const render = async (path) => {
+const router = async (path, options = {}) => {
+  const { isInit = false } = options;
+  if(!isInit && path === window.location.pathname){
+    return;
+  }
+
+  const absolutePath = `${window.location.origin}${path}`;
+  window.history.pushState({}, path, absolutePath);
   target.innerText = null;
   let module = undefined;
   
@@ -22,14 +29,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  render(`/`);
-};
-
-const router = (path) => {
-  const absolutePath = `${window.location.origin}${path}`;
-  window.history.pushState({}, path, absolutePath);
-
-  render(path);
+  router(`/`, { isInit: true });
 };
 
 export { initRouter, router };
