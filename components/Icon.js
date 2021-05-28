@@ -58,6 +58,8 @@ export default class Icon{
   }
   
   render(){
+    this.$svg.innerHTML = null;
+
     if(this.className){
       this.$svg.classList.add(this.className);
     }
