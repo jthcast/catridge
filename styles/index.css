@@ -386,6 +386,58 @@
   }
 }
 
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 66.667rem;
+  padding: 1.5rem 3rem;
+  margin: auto;
+}
+
+.footer-links{
+  width: 100%;
+}
+
+.footer-links ul{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li:not(:first-child, :last-child){
+  margin: 0 1rem 0 0;
+}
+
+.footer-links svg{
+  margin: 0 0.25rem 0 0;
+}
+
+.footer-links-copyright{
+  margin-right: auto;
+}
+
+.footer-links-link{
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 40.875rem) {
+  .footer{
+    padding: 1rem;
+  }
+
+  .footer-links ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-links li:not(:first-child){
+    margin: 0.5rem 0 0 0;
+  }
+}
+
 /* custom */
 
 .catcard{
