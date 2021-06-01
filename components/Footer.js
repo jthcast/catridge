@@ -1,9 +1,8 @@
-import Icon from './../components/Icon.js';
+import Link from './Link.js';
 
 // interface FooterLinks{
 //   name: string;
 //   href: string;
-//   icon: string;
 // }
 
 export default class Footer{
@@ -45,19 +44,10 @@ export default class Footer{
     }
     if(this.links){
       this.links.forEach((link) => {
-        const { name, href, icon } = link;
+        const { name, href } = link;
         const $li = document.createElement(`li`);
-        const $a = document.createElement(`a`);
-        $a.classList.add(`footer-links-link`);
-        $a.setAttribute(`href`, href);
-        if(icon){
-          new Icon({ target: $a, icon });
-        }
-        const $span = document.createElement(`span`);
-        $span.innerText = name;
+        const $link = new Link({ href, text: name, target: $li });
 
-        $a.appendChild($span);
-        $li.appendChild($a);
         this.$ul.appendChild($li);
       });
     }

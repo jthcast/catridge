@@ -2,6 +2,7 @@ import { router } from '../utils/router.js';
 import setState from '../utils/setState.js';
 import Button from './Button.js';
 import Icon from './Icon.js';
+import Link from './Link.js';
 
 export default class Header{
   constructor({
@@ -76,11 +77,8 @@ export default class Header{
       this.links.forEach((link) => {
         const { name, href } = link;
         const $li = document.createElement(`li`);
-        const $a = document.createElement(`a`);
-        $a.innerText = name;
-        $a.setAttribute(`href`, href);
+        const $link = new Link({ href, text: name, target: $li });
 
-        $li.appendChild($a);
         $ul.appendChild($li);
       });
 
