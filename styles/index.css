@@ -41,7 +41,20 @@
   color: var(--color-base);
 }
 
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .main{
+  width: 100%;
   max-width: 66.667rem;
   padding: 1.5rem 3rem;
   margin: auto;
@@ -321,9 +334,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%;
   max-width: 66.667rem;
   padding: 1.5rem 3rem;
-  margin: auto;
+  margin: 0 auto 0 auto;
 }
 
 .header-titleDiv{
@@ -390,9 +404,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%;
   max-width: 66.667rem;
   padding: 1.5rem 3rem;
-  margin: auto;
+  margin: auto auto 0 auto;
 }
 
 .footer-links{
