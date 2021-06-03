@@ -3,7 +3,7 @@ import Icon from '../components/Icon.js';
 export default class Switch{
   constructor({
     ariaLabel,
-    checked = false,
+    isChecked = false,
     checkedChildren,
     children,
     className,
@@ -20,7 +20,7 @@ export default class Switch{
     this.$switch.classList.add(`switch`);
     this.$switch.setAttribute(`role`, `switch`);
     this.ariaLabel = ariaLabel;
-    this.checked = checked;
+    this.isChecked = isChecked;
     this.checkedChildren = checkedChildren;
     this.children = children;
     this.isDisabled = isDisabled;
@@ -64,13 +64,13 @@ export default class Switch{
         $unCheckedSpan.innerText = this.unCheckedChildren;
       }
     }
-    if(this.checked){
+    if(this.isChecked){
       this.$switch.classList.add(`switch-checked`);
-      this.$switch.setAttribute(`aria-checked`, this.checked);
+      this.$switch.setAttribute(`aria-checked`, this.isChecked);
       this.$switch.appendChild($checkedSpan);
-    }else if(!this.checked){
+    }else if(!this.isChecked){
       this.$switch.classList.remove(`switch-checked`);
-      this.$switch.setAttribute(`aria-checked`, this.checked);
+      this.$switch.setAttribute(`aria-checked`, this.isChecked);
       this.$switch.appendChild($unCheckedSpan);
     }
     if(this.children){
