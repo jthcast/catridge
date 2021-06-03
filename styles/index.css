@@ -340,6 +340,10 @@ html, body{
   margin: 0 auto 0 auto;
 }
 
+.footer a{
+  color: var(--color-base);
+}
+
 .header-titleDiv{
   display: flex;
   align-items: center;
@@ -410,6 +414,10 @@ html, body{
   margin: auto auto 0 auto;
 }
 
+.footer a{
+  color: var(--color-base);
+}
+
 .footer-links{
   width: 100%;
 }
@@ -455,6 +463,20 @@ html, body{
 }
 
 /* custom */
+
+.switch-darkmode{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.switch-darkmode.switch-checked{
+  background-color: var(--color-down);
+}
+
+.switch-darkmode svg{
+  font-size: 1.5rem;
+}
 
 .catcard{
   width: 10rem;
