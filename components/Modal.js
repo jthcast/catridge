@@ -12,6 +12,7 @@ export default class Modal{
     this.$modalWrapper.setAttribute(`role`, `dialog`);
     this.$modalWrapper.setAttribute(`aria-modal`, `true`);
     this.$modal = document.createElement(`div`);
+    this.$modal.classList.add(`modal-inner`);
     this.$background = document.createElement(`div`);
     this.$background.classList.add(`modal-backdrop`);
     this.$background.setAttribute(`role`, `presentation`);
