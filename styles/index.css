@@ -119,7 +119,7 @@ html, body{
 }
 
 .input-label{
-  display: block;
+  position: relative;
 }
 
 .input-label:focus-within{
