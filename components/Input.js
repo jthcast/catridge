@@ -72,7 +72,7 @@ export default class Input{
       this.$input.autofocus = true;
     }
     if(this.className){
-      this.label.classList.add(this.className);
+      this.$label.classList.add(this.className);
     }
     if(this.isDisabled){
       this.$input.disabled = true;
