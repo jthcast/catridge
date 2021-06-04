@@ -41,6 +41,10 @@
   color: var(--color-base);
 }
 
+*{
+  box-sizing: border-box;
+}
+
 html, body{
   height: 100%;
   margin: 0;
@@ -51,13 +55,15 @@ html, body{
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 .main{
   width: 100%;
   max-width: 66.667rem;
   padding: 1.5rem 3rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 40.875rem) { /* mobile */
@@ -202,6 +208,11 @@ html, body{
   display: flex;
 }
 
+.modal-inner{
+  margin: auto;
+  max-width: 90%;
+}
+
 .modal-backdrop{
   position: absolute;
   width: 100%;
@@ -274,8 +285,6 @@ html, body{
 }
 
 .card-image{
-  width: calc( 100% + 0.1rem );
-  margin: -0.05rem;
   border-radius: 0.25rem 0.25rem 0 0;
 }
 
@@ -478,7 +487,25 @@ html, body{
   font-size: 1.5rem;
 }
 
-.catcard{
-  width: 10rem;
+.card-cat-list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.card-cat-list li{
+  width: 12rem;
   cursor: pointer;
+  margin: 1rem;
+}
+
+.card-cat-list li img{
+  width: 12rem;
+  height: 15rem;
+}
+
+.cat-search{
+  display: flex;
 }
