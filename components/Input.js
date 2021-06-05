@@ -48,7 +48,7 @@ export default class Input{
           onEnter();
         }
       };
-      this.$input.addEventListener(`keypress`, onEnterHandling);
+      this.$input.addEventListener(`keyup`, onEnterHandling);
     }
     if(this.onKeyPress){
       const onKeyPressHandler = () => {
@@ -120,5 +120,9 @@ export default class Input{
 
   clear(){
     this.$input.value = ``;
+  }
+
+  getValue(){
+    return this.$input.value;
   }
 }
