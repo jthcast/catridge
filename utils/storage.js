@@ -8,7 +8,6 @@ const getItem = (key, options = {}) => {
     item = window.localStorage.getItem(key);
   }
 
-  console.log('ty', item)
   return JSON.parse(item);
 };
 
