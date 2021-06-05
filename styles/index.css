@@ -138,6 +138,12 @@ html, body{
   pointer-events: none;
 }
 
+.input-icon{
+  position: absolute;
+  right: 0;
+  margin: 2.4rem 0.5rem 0 0;
+}
+
 .input{
   border: 0.1rem solid var(--border-base);
   border-radius: 0.25rem;
@@ -149,6 +155,10 @@ html, body{
 
 .input-label-text{
   padding: 2.4rem 1rem 0.8rem 1rem;
+}
+
+.input-label-text-icon{
+  padding: 2.4rem 2rem 0.8rem 1rem;
 }
 
 .input::placeholder{

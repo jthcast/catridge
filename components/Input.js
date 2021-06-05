@@ -1,4 +1,5 @@
 import debounce from '../utils/debounce.js';
+import Icon from './Icon.js';
 
 export default class Input{
   constructor({
@@ -7,6 +8,7 @@ export default class Input{
     icon,
     isDebounce = false,
     isDisabled = false,
+    isLoading = false,
     label = ``,
     onClick,
     onKeyPress,
@@ -26,8 +28,10 @@ export default class Input{
     this.autoFocus = autoFocus;
     this.className = className;
     this.icon = icon;
+    this.iconElement = undefined;
     this.isDebounce = isDebounce;
     this.isDisabled = isDisabled;
+    this.isLoading = isLoading;
     this.label = label;
     if(this.label){
       this.$input.classList.add(`input-label-text`);
@@ -74,12 +78,34 @@ export default class Input{
     if(this.className){
       this.$label.classList.add(this.className);
     }
+    if(this.icon){
+      this.iconElement?.remove();
+      this.$input.classList.add(`input-label-text-icon`);
+      const icon = new Icon({ className: `input-icon`, icon: this.icon, target: this.$label });
+      this.iconElement = icon.dom;
+    }
     if(this.isDisabled){
       this.$input.disabled = true;
       this.$label.classList.add(`input-label-disabled`);
     }else if(!this.isDisable){
       this.$input.disabled = false;
       this.$label.classList.remove(`input-label-disabled`);
+    }
+    if(this.isLoading){
+      this.iconElement?.remove();
+      this.$input.classList.add(`input-label-text-icon`);
+      const icon = new Icon({
+        className: `input-icon`,
+        icon: `spinner`,
+        isSpin: true,
+        target: this.$label
+      });
+      this.iconElement = icon.dom;
+    }else{
+      if(!this.icon){
+        this.iconElement?.remove();
+        this.$input.classList.remove(`input-label-text-icon`);
+      }
     }
     if(this.placeholder){
       this.$input.placeholder = this.placeholder;
