@@ -8,6 +8,7 @@ const getItem = (key, options = {}) => {
     item = window.localStorage.getItem(key);
   }
 
+  console.log('ty', item)
   return JSON.parse(item);
 };
 
@@ -15,7 +16,7 @@ const setItem = (key, value, options = {}) => {
   const { type = `session`} = options;
   let item = value;
 
-  if(typeof(value) === `object`){
+  if(typeof(value) !== `number`){
     item = JSON.stringify(item);
   }
   if(type === `session`){
