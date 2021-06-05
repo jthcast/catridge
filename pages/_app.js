@@ -36,6 +36,11 @@ const App = (root) => {
   });
 
   let isDark = false;
+  const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
+  if (systemPreference.matches) {
+    isDark = true;
+  }
+  
   const darkmodeHandling = () => {
     isDark = !isDark;
     const colorMode = isDark ? `dark` : `light`;
@@ -49,7 +54,7 @@ const App = (root) => {
     target: root,
     unCheckedChildren: iconSun.dom,
     checkedChildren: iconMoon.dom,
-    isChecked: false,
+    isChecked: isDark,
     onClick: darkmodeHandling
   });
 };
