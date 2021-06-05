@@ -37,4 +37,28 @@ const getRandomCats = async (limit = 20) => {
   }
 };
 
-export { getRandomCats };
+const getSearchedCats = async (keyword, options = {}) => {
+  try{
+    const { limit = 20, page = 1 } = options;
+    const breedsUrl = `${API_ENDPOINT}/breeds/search?q=${keyword}`;
+    const breeds = await request(breedsUrl);
+    const images = breeds.map(async (breed) => {
+      const imagesUrl = `${API_ENDPOINT}/images/search?breed_id=${breed.id}&limit=${limit}&page=${page}`;
+      return await request(imagesUrl);
+    });
+    const response = await Promise.all(images);
+    const data = response.flat();
+    
+    return {
+      isError: false,
+      data
+    };
+  }catch(error){
+    return {
+      isError: true,
+      data: error
+    };
+  }
+};
+
+export { getRandomCats, getSearchedCats };
