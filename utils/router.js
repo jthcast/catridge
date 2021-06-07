@@ -14,7 +14,7 @@ const router = async (path, options = {}) => {
   let module = undefined;
   
   try{
-    const pagePath = path === `/` ? `${BASE_URL}/index` : path;
+    const pagePath = path === BASE_URL ? `/index` : path;
     module = await import(`../pages${pagePath}.js`);
   }catch(error){
     module = await import(`../pages/ErrorPage.js`);
@@ -31,7 +31,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  router(`/`, { isInit: true });
+  router(BASE_URL, { isInit: true });
 };
 
 export { initRouter, router };
