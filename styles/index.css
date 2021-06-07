@@ -145,9 +145,10 @@ html, body{
 }
 
 .input{
+  background-color: transparent;
+  color: var(--color-base);
   border: 0.1rem solid var(--border-base);
   border-radius: 0.25rem;
-  box-sizing: border-box;
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
@@ -481,6 +482,22 @@ html, body{
   align-items: center;
 }
 
+.chip{
+  display: inline-flex;
+  min-width: 3rem;
+  background-color: var(--primary-brand-base);
+  color: var(--white);
+  padding: 0.25rem 0 0 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.chip-closebutton{
+  border: 0;
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
 /* custom */
 
 .switch-darkmode{
@@ -503,6 +520,7 @@ html, body{
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
+  margin: 0;
 }
 
 .card-cat-list li{
@@ -516,6 +534,35 @@ html, body{
   height: 15rem;
 }
 
+.card-cat-list .card-cat-none{
+  cursor: auto;
+}
+
 .cat-search{
   display: flex;
+}
+
+.cat-search-input{
+  width: 100%;
+  margin: 0 1rem 0 0;
+}
+
+.cat-search-random{
+  min-width: 5.2rem;
+  justify-content: center;
+}
+
+.cat-keywords{
+  list-style: none;
+  display: flex;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.cat-keywords li{
+  cursor: pointer;
+}
+
+.cat-keywords li:not(:last-child){
+  margin: 0 0.5rem 0 0;
 }
