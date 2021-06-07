@@ -1,3 +1,5 @@
+// const BASE_URL = `/`;
+const BASE_URL = `jthcast.github.io/vanillaJS-practice`;
 let target = undefined;
 
 const router = async (path, options = {}) => {
@@ -12,7 +14,7 @@ const router = async (path, options = {}) => {
   let module = undefined;
   
   try{
-    const pagePath = path === `/` ? `/index` : path;
+    const pagePath = path === `${BASE_URL}` ? `/index` : path;
     module = await import(`../pages${pagePath}.js`);
   }catch(error){
     module = await import(`../pages/ErrorPage.js`);
@@ -29,7 +31,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  router(`/`, { isInit: true });
+  router(BASE_URL, { isInit: true });
 };
 
 export { initRouter, router };
