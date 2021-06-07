@@ -11,7 +11,7 @@ const App = (root) => {
     title: `VanillaJS`,
     logo: { 
       alt: `VanillaJS`,
-      src: `../public/technologist.png`
+      src: `./public/technologist.png`
     }
   });
   
@@ -40,7 +40,7 @@ const App = (root) => {
   if (systemPreference.matches) {
     isDark = true;
   }
-  
+
   const darkmodeHandling = () => {
     isDark = !isDark;
     const colorMode = isDark ? `dark` : `light`;
