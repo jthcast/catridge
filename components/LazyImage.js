@@ -4,7 +4,7 @@ export default class LazyImage{
   constructor({
     alt,
     className,
-    emptyImageSrc = `./public/empty-picture.png`,
+    emptyImageSrc = `./assets/empty-picture.png`,
     height,
     src,
     target,
