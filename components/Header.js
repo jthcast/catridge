@@ -1,4 +1,4 @@
-import { router } from '../utils/router.js';
+import { BASE_URL, HOST_URL, router } from '../utils/router.js';
 import setState from '../utils/setState.js';
 import Button from './Button.js';
 import Icon from './Icon.js';
@@ -16,7 +16,7 @@ export default class Header{
     this.$header.classList.add(`header`);
     this.$titleDiv = document.createElement(`div`);
     this.$titleDiv.classList.add(`header-titleDiv`);
-    this.$titleDiv.addEventListener(`click`, () => router(`/`));
+    this.$titleDiv.addEventListener(`click`, () => router(`${HOST_URL}${BASE_URL}`));
     this.className = className;
     this.logo = logo;
     this.links = links;

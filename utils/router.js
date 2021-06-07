@@ -34,4 +34,4 @@ const initRouter = ($target) => {
   router(path, { isInit: true });
 };
 
-export { initRouter, router };
+export { initRouter, router, HOST_URL, BASE_URL };

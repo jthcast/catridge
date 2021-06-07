@@ -11,7 +11,6 @@ import { setItem, getItem } from '../utils/storage.js';
 import Chip from '../components/Chip.js';
 
 const Home = ({ target }) => {
-  
   let isCatsModalOpen = false;
   const catsModalHandling = (event) => {
     if(isCatsModalOpen){

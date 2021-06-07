@@ -43,7 +43,7 @@ export default class ErrorSection{
       design: `primary`,
       target: this.$section,
       title: `홈`,
-      onClick: () => router(`/`)
+      onClick: () => router(`${HOST_URL}${BASE_URL}`)
     });
   }
 }
