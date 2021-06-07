@@ -1,5 +1,6 @@
-// const BASE_URL = `/`;
-const BASE_URL = `jthcast.github.io/vanillaJS-practice`;
+// const HOST_URL = ``;
+const HOST_URL = `https://jthcast.github.io`;
+const BASE_URL = `/vanillaJS-practice`;
 let target = undefined;
 
 const router = async (path, options = {}) => {
@@ -7,16 +8,16 @@ const router = async (path, options = {}) => {
   if(!isInit && path === window.location.pathname){
     return;
   }
-  const absolutePath = `${BASE_URL}${path}`;
+  const absolutePath = `${HOST_URL}${path}`;
   window.history.pushState({}, path, absolutePath);
   target.innerText = null;
   let module = undefined;
   
   try{
-    const pagePath = path === `/` ? `/index` : path;
-    module = await import(`../pages${pagePath}.js`);
+    const pagePath = path === BASE_URL ? `/index` : path.replcae(BASE_URL, ``);
+    module = await import(`./pages${pagePath}.js`);
   }catch(error){
-    module = await import(`../pages/ErrorPage.js`);
+    module = await import(`./pages/ErrorPage.js`);
   }finally{
     module.default({ target });
   }
@@ -30,7 +31,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  router(`/`, { isInit: true });
+  router(path, { isInit: true });
 };
 
 export { initRouter, router };
