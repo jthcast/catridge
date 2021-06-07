@@ -11,7 +11,7 @@ const App = (root) => {
     title: `VanillaJS`,
     logo: { 
       alt: `VanillaJS`,
-      src: `./assets/technologist.png`
+      src: `./public/technologist.png`
     }
   });
   
