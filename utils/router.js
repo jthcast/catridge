@@ -31,7 +31,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  router(BASE_URL, { isInit: true });
+  router(`/`, { isInit: true });
 };
 
 export { initRouter, router };
