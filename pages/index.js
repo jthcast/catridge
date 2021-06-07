@@ -62,14 +62,14 @@ const Home = ({ target }) => {
   let cats = getItem(`cats`) || [];
   let keywords = getItem(`keywords`) || [];
   let page = getItem(`page`) || 1;
-  let lastAction = getItem(`lastAction`) || undefined;
-  let keyword = getItem(`keyword`) || undefined;
+  let lastAction = getItem(`lastAction`) || ``;
+  let keyword = getItem(`keyword`) || ``;
   
   const resetInfo = () => {
     cats = [];
-    keyword = undefined;
+    keyword = ``;
     page = 1;
-    lastAction = undefined;
+    lastAction = ``;
   };
 
   const storageHandling = () => {
