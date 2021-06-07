@@ -15,6 +15,7 @@ const router = async (path, options = {}) => {
   
   try{
     const pagePath = path === BASE_URL ? `/index` : path.replcae(BASE_URL, ``);
+    console.log('?', pagePath)
     module = await import(`../pages${pagePath}.js`);
   }catch(error){
     module = await import(`../pages/ErrorPage.js`);
