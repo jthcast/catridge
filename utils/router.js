@@ -7,10 +7,7 @@ const router = async (path, options = {}) => {
   if(!isInit && path === window.location.pathname){
     return;
   }
-  if(path === BASE_URL){
-    path = `/`;
-  }
-  const absolutePath = `${window.location.origin}${path}`;
+  const absolutePath = `${BASE_URL}${path}`;
   window.history.pushState({}, path, absolutePath);
   target.innerText = null;
   let module = undefined;
@@ -33,7 +30,7 @@ const initRouter = ($target) => {
     router(path);
   });
 
-  router(BASE_URL, { isInit: true });
+  router(`/`, { isInit: true });
 };
 
 export { initRouter, router };
