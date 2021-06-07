@@ -1,11 +1,10 @@
 // const HOST_URL = ``;
 // const BASE_URL = `/`;
 const HOST_URL = `https://jthcast.github.io`;
-const BASE_URL = `/vanillaJS-practice`;
+const BASE_URL = `/vanillaJS-practice/`;
 let target = undefined;
 
 const router = async (path, options = {}) => {
-  console.log('?', path, path.replace(BASE_URL, ''))  
   const { isInit = false } = options;
   if(!isInit && path === window.location.pathname){
     return;
