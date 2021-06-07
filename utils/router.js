@@ -1,9 +1,11 @@
 // const HOST_URL = ``;
+// const BASE_URL = `/`;
 const HOST_URL = `https://jthcast.github.io`;
 const BASE_URL = `/vanillaJS-practice`;
 let target = undefined;
 
 const router = async (path, options = {}) => {
+  console.log('?', path, path.replace(BASE_URL, ''))  
   const { isInit = false } = options;
   if(!isInit && path === window.location.pathname){
     return;
@@ -12,11 +14,9 @@ const router = async (path, options = {}) => {
   window.history.pushState({}, path, absolutePath);
   target.innerText = null;
   let module = undefined;
-  
   try{
-    const pagePath = path === BASE_URL ? `/index` : path.replcae(BASE_URL, ``);
-    console.log('?', pagePath)
-    module = await import(`../pages${pagePath}.js`);
+    const pagePath = path === BASE_URL ? `index` : path.replcae(BASE_URL, ``);
+    module = await import(`../pages/${pagePath}.js`);
   }catch(error){
     module = await import(`../pages/ErrorPage.js`);
   }finally{
