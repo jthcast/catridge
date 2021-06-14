@@ -1,7 +1,7 @@
 // const HOST_URL = ``;
 // const BASE_URL = `/`;
 const HOST_URL = `https://jthcast.github.io`;
-const BASE_URL = `/vanillaJS-practice/`;
+const BASE_URL = `/catridge/`;
 let target = undefined;
 
 const router = async (path, options = {}) => {
