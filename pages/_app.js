@@ -8,10 +8,10 @@ import Icon from '../components/Icon.js';
 const App = (root) => {  
   const header = new Header({
     target: root,
-    title: `VanillaJS`,
+    title: `Catridge`,
     logo: { 
-      alt: `VanillaJS`,
-      src: `./public/technologist.png`
+      alt: `Catridge`,
+      src: `./public/favicon.png`
     }
   });
   
